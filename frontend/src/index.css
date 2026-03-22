@@ -1,0 +1,8 @@
+/**
+ * Global Stylesheet
+ * Initializes Tailwind CSS v4 and configures the global dark mode variant.
+ */
+@import "tailwindcss";
+
+/* Enables manual dark mode toggling via the 'dark' class on the root element */
+@custom-variant dark (&:where(.dark, .dark *));
