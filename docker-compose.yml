@@ -1,0 +1,37 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      # Auto-provisions the initial database schema and root credentials
+      MYSQL_ROOT_PASSWORD: ena123456789
+      MYSQL_DATABASE: syncnode
+    ports:
+      # Maps container port 3306 to host port 3307 to prevent conflicts with local Windows MySQL
+      - "3307:3306"
+    volumes:
+      # Mounts a named volume to persist database state across container restarts
+      - db_data:/var/lib/mysql
+
+  api:
+    build: ./backend
+    restart: always
+    ports:
+      # Exposes the FastAPI ASGI server to the host machine
+      - "8000:8000"
+    env_file:
+      # Injects environment variables from the local .env file
+      - ./backend/.env
+    volumes:
+      # Mounts the local backend directory to the container's working directory for live hot-reloading
+      - ./backend:/app
+    command: 
+      # Overrides the Dockerfile CMD to enable Uvicorn's live-reload feature for local development
+      uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    depends_on:
+      # Ensures the database container is initialized before the API container boots
+      - db
+
+volumes:
+  # Declares the named volume for database data persistence
+  db_data:

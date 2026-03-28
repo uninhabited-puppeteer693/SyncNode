@@ -1,15 +1,11 @@
 import os
-
+import bcrypt
 import resend
 from dotenv import load_dotenv
-from passlib.context import CryptContext
 
 # Application Environment Initialization
 load_dotenv()
 resend.api_key = os.getenv("RESEND_API_KEY")
-
-# Cryptographic context utilizing the industry-standard bcrypt algorithm
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # Dynamic Role-Based Access Control (RBAC) hierarchy weights.
 # Facilitates scalable permission checks (e.g., target_weight >= admin_weight).
@@ -22,20 +18,30 @@ ROLE_WEIGHTS = {
     "developer": 10
 }
 
-
 def hash_password(password: str) -> str:
     """
-    Generates a secure, salted cryptographic hash from a plaintext password.
+    Generates a secure, salted cryptographic hash from a plaintext password using raw bcrypt.
     """
-    return pwd_context.hash(password)
-
+    # 1. Convert the standard string into bytes
+    password_bytes = password.encode('utf-8')
+    
+    # 2. Generate the salt and hash the password
+    salt = bcrypt.gensalt()
+    hashed_bytes = bcrypt.hashpw(password_bytes, salt)
+    
+    # 3. Convert the byte-hash back into a standard string for the database
+    return hashed_bytes.decode('utf-8')
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """
     Compares a plaintext password attempt against a stored cryptographic hash.
     """
-    return pwd_context.verify(plain_password, hashed_password)
-
+    # Convert both the plain password and the database hash into bytes
+    password_bytes = plain_password.encode('utf-8')
+    hashed_bytes = hashed_password.encode('utf-8')
+    
+    # checkpw returns a simple True or False
+    return bcrypt.checkpw(password_bytes, hashed_bytes)
 
 def send_email_code(target_email: str, code: str) -> bool:
     """
